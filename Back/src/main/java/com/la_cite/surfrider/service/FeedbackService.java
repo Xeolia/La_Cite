@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class FeedbackService {
-    
+
     @Autowired
     FeedbackRepository feedbackRepository;
 
