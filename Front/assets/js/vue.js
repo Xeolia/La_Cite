@@ -1,31 +1,31 @@
 
-//
+// HOME
 const Home = {
-    template: '<h1>HOME PAGE</h1>',
+    template: '#home',
     name: 'Home'
 };
 
-//
+// LOGIN
 const Login = {
-    template: '<h1>Connecte toi</h1>',
+    template: '#login',
     name: 'Login'
 };
 
-//
+// SIGN UP
 const SignUp = {
-    template: '<h1>Inscrit toi ici !</h1>',
+    template: '#sign-up',
     name: 'SignUp'
 };
 
-//
+// SPOTS
 const Spots = {
-    template: '<h1>Trouve ton spot de la journée !</h1>',
+    template: '#spots',
     name: 'Spots'
 };
 
 
 
-//router
+//ROUTER
 const router = new VueRouter({
     routes: [
         { path: '/', component: Home, name: 'Home' },
