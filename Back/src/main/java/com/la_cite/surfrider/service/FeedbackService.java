@@ -12,7 +12,10 @@ public class FeedbackService {
     FeedbackRepository feedbackRepository;
 
     public boolean enregistrer(Feedback feedback){
-        feedbackRepository.save(feedback);
+        if(feedbackRepository.save(feedback)!=null)
+        {
+            return true;
+        }
         return false;
     }
 

@@ -18,9 +18,9 @@ import javax.persistence.Table;
 
 public class Feedback {
 
-
     @Id
     @GeneratedValue
+    private int id;
     private String ville;
     private String spot;
     private String name;
@@ -29,7 +29,12 @@ public class Feedback {
     private String debutBaignade;
     private String finBaignade;
 
+    public int getId() { return id; }
 
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public void setDureeBaignade(String dureeBaignade) { this.dureeBaignade = dureeBaignade; }
 
@@ -59,8 +64,8 @@ public class Feedback {
         return name;
     }
 
-    public void setVille(String id) {
-        this.ville = id;
+    public void setVille(String ville) {
+        this.ville = ville;
     }
 
     public void setSpot(String username) {
