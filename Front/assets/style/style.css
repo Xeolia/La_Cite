@@ -42,3 +42,11 @@
     align-items: unset;
     justify-content: center;
   }
+
+  .container {
+    position: relative;
+    width: 100%;
+    background-color: #fff;
+    min-height: 100vh;
+    overflow: hidden;
+  }
