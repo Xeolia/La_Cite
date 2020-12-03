@@ -2,25 +2,57 @@
 // HOME
 const Home = {
     template: '#home',
-    name: 'Home'
+    name: 'Home',
+    data:() => {
+        return {
+
+        }
+    },
+    methods: {
+
+    }
 };
 
 // LOGIN
 const Login = {
     template: '#login',
-    name: 'Login'
+    name: 'Login',
+    data:() => {
+        return {
+
+        }
+    },
+    methods: {
+        
+    }
 };
 
 // SIGN UP
 const SignUp = {
     template: '#sign-up',
-    name: 'SignUp'
+    name: 'SignUp',
+    data:() => {
+        return {
+
+        }
+    },
+    methods: {
+        
+    }
 };
 
 // SPOTS
 const Spots = {
     template: '#spots',
-    name: 'Spots'
+    name: 'Spots',
+    data:() => {
+        return {
+
+        }
+    },
+    methods: {
+        
+    }
 };
 
 
