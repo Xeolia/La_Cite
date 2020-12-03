@@ -5,26 +5,17 @@ import com.la_cite.surfrider.User;
 import com.la_cite.surfrider.service.FeedbackService;
 import com.la_cite.surfrider.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestHeader;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
-
+@RestController
+@CrossOrigin(origins = "*")
 public class FeedBackController {
     @Autowired
     FeedbackService feedbackService;
-    //● Ville
-    //● Spot
-    //● Nom du Waterman
-    //● Date
-    //● Heure début baignade
-    //● Heure fin baignade
-    //● Durée de baignade
-    //(hh:mm)
 
-    @PostMapping("/user/feedback")
+
+    @PostMapping("feedback/create")
     @ResponseBody
     public boolean createFeedBack(@RequestBody Feedback feedback)
     {
