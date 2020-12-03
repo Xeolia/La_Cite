@@ -6,15 +6,49 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Home page - nuit de l'info</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link href="./assets/style/style.css" rel="stylesheet" />
+    <link href="../assets/style/style.css" rel="stylesheet" />
 </head>
 <body>
     <div id="app">
-        <h1>Home page</h1>
-        <h2>Nuit de l'info</h2>
-        <h3>Init du projet</h3>
-    </div>
 
+        <!-- navigation -->
+        <nav>
+            <div class="nav-container">
+              <ul>
+                <router-link to="/login">
+                <li><a>Se connecter</a></li>
+                </router-link>
+                <router-link to="/sign-up">
+                <li><a>S'incrire</a></li>
+                </router-link>
+                  <router-link to="/spots">
+                <li><a>Trouve ton spot</a></li>
+                  </router-link>
+                <router-link to="/">
+                <li style="float: left"><a class="active">Home</a></li>
+                </router-link>
+              </ul>
+            </div>
+          </nav>
+          <router-view></router-view>
+
+          <!-- // -->
+
+
+
+
+          <!-- // -->
+
+
+
+
+
+
+        <!-- // -->
+
+
+        
+    </div>
 </body>
 
 <!-- Imports lib -->
