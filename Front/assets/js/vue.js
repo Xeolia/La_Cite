@@ -23,7 +23,23 @@ const Login = {
         }
     },
     methods: {
-        
+        getUser() {
+            var username = document.getElementById("username_login").value;
+            var password = document.getElementById("password_login").value;
+            console.log("username : " + username + "\npassword : " + "\n");
+
+            fetch('http://127.0.0.1:8085/user/authentification', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({username: username, password: password})
+            }).then(response=> {
+                response.json().then(data=>{
+                    console.log(data);
+                })
+            })
+        }
     }
 };
 

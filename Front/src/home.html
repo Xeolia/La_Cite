@@ -46,6 +46,20 @@
         <script type="text/x-template" id="login">
             <div id="">
                 <h1>Conponent LOGIN</h1>
+                <form>
+                    <h2 class="title">Sign up</h2>
+
+                    <div>
+                        <label for="username_login">Username :</label>
+                        <input type="text" id="username_login" placeholder="userName">
+                    </div>
+                    <div>
+                        <label for="password_login">Password :</label>
+                        <input type="password" id="password_login" placeholder="password">
+                    </div>
+    
+                      <button v-on:click="getUser" value="getUser">Envoyer</button>
+                  </form>
             </div>
         </script>
 
