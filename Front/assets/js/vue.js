@@ -38,6 +38,11 @@ const Login = {
             .then(response => {
                 response.json().then(data => {
                     console.log(data);
+                    if(response.status == 200){
+                        $cookies.set('token', JSON.stringify(data.token));
+                        this.$router.push({ path: '/'});
+                    }else{
+                    }
                 })
             })
         }
