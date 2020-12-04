@@ -1,6 +1,10 @@
 //STORE
 const store = new Vuex.Store({
-    token: "",
+    token: "null",
+    id: '',
+    username: '',
+    name: '',
+    mail: '',
     mutations: {
         getCookie() {
             if($cookies.get('token')){
@@ -9,10 +13,10 @@ const store = new Vuex.Store({
                 store.token = cookie;
                 return cookie;
             }else{
-                console.log("il n'y a pas de cookie token");
+                console.log("store | getCookie() | aucun cookie dans le navigateur");
                 return null;
             }
-        },
+        }
     }
 })
 
@@ -23,15 +27,47 @@ const Home = {
     name: 'Home',
     data:() => {
         return {
-            index: '124'
+            index: '124',
+            token: "",
+            id: '',
+            username: '',
+            pseudo: '',
+            mail: '',
         }
     },
     methods: {
-
+        getUser() {
+            if (store.token == "" || store.token == "null"){
+                console.log("Home | getUser() | aucun token dans le store");
+            }else{
+                console.log("Home | getUser() | valeur token | " + store.token);
+                fetch("http://localhost:8085/user", {
+                method: 'GET',
+                headers: {
+                    'Authorization': 'Bearer ' + store.token,
+                }})
+                .then( response => {
+                    response.json().then(data => {
+                    console.log(data);
+                    this.id = data.id;
+                    this.username = data.username;
+                    this.pseudo = data.name;
+                    this.mail = data.email;
+                    console.log("Home | getUser() | fin du traitement de la réponse de la requête");
+                    return true;
+                    })})
+            }
+        }
     },
     mounted(){
         store.commit('getCookie');
-        
+        this.getUser();
+        console.log("before while");
+        this.token = store.token;
+        //new Promise(resolve => setTimeout(resolve, 2000));
+        //console.log("Home | mounted() | valeur result | " + result)
+        console.log("Home | mounted() | username store : " + store.username + " | name store : " + store.name + " | mail store : " + store.mail);
+
     }
 };
 
