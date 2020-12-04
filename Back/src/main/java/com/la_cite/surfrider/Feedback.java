@@ -22,6 +22,7 @@ public class Feedback {
     @GeneratedValue
     private int id;
     private String ville;
+    private String creator;
     private String spot;
     private String name;
     private String date;
@@ -35,6 +36,9 @@ public class Feedback {
     public void setId(int id) {
         this.id = id;
     }
+    public String getCreator() { return creator;}
+
+    public void setCreator(String creator) {this.creator = creator;}
 
     public void setDureeBaignade(String dureeBaignade) { this.dureeBaignade = dureeBaignade; }
 

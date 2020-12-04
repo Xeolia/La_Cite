@@ -7,6 +7,7 @@ import com.la_cite.surfrider.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Map;
 @RestController
 @CrossOrigin(origins = "*")
@@ -17,9 +18,18 @@ public class FeedBackController {
 
     @PostMapping("feedback/create")
     @ResponseBody
-    public boolean createFeedBack(@RequestBody Feedback feedback)
+    public boolean createFeedBack(@RequestBody Feedback feedback, @RequestHeader("Authorization")Map<String, String> headers )
     {
+        String token = feedbackService.getUsernameFromToken(headers.get("authorization"));
+        feedback.setCreator(token);
         return feedbackService.enregistrer(feedback);
+    }
+    @GetMapping("feedback/get")
+    @ResponseBody
+    public List<Feedback> getFeedBack(@RequestHeader("Authorization")Map<String, String> headers )
+    {
+        String token = feedbackService.getUsernameFromToken(headers.get("authorization"));
+        return feedbackService.getFeedbackRepository(token);
     }
 
 }
