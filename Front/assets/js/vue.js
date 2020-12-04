@@ -42,6 +42,7 @@ const Login = {
                         $cookies.set('token', JSON.stringify(data.token));
                         this.$router.push({ path: '/'});
                     }else{
+                        alert("Bad password");
                     }
                 })
             })
