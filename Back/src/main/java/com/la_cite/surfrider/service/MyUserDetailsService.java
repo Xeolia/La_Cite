@@ -19,7 +19,4 @@ public class MyUserDetailsService implements UserDetailsService {
         com.la_cite.surfrider.User user = userRepository.getUserByUsername(username);
         return new User(user.getUsername(),user.getPassword(), new ArrayList<>());
     }
-
-
-
 }
