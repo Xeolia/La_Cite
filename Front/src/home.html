@@ -12,21 +12,26 @@
     <div id="app">
 
         <!-- navigation -->
-        <nav>
-            <div class="nav-container">
-              <ul>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Surf Rider</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul class="navbar-nav">
+                <router-link to="/">
+                    <li class="nav-item" style="float: left"><a class="nav-link active">Home</a></li>
+                </router-link>
                 <router-link to="/login">
-                <li><a>Se connecter</a></li>
+                    
+                <li class="nav-item"><a class="nav-link">Se connecter</a></li>
                 </router-link>
                 <router-link to="/sign-up">
-                <li><a>S'incrire</a></li>
+                <li class="nav-item"><a class="nav-link">S'incrire</a></li>
                 </router-link>
                   <router-link to="/spots">
-                <li><a>Trouve ton spot</a></li>
+                <li class="nav-item"><a class="nav-link">Trouve ton spot</a></li>
                   </router-link>
-                <router-link to="/">
-                <li style="float: left"><a class="active">Home</a></li>
-                </router-link>
               </ul>
             </div>
           </nav>
@@ -43,58 +48,77 @@
 
 
         <!-- //LOGIN -->
-        <script type="text/x-template" id="login">
-            <div id="">
-                <h1>Conponent LOGIN</h1>
-                <form>
-                    <h2 class="title">Sign up</h2>
 
-                    <div>
-                        <label for="username_login">Username :</label>
-                        <input type="text" id="username_login" placeholder="userName">
-                    </div>
-                    <div>
-                        <label for="password_login">Password :</label>
-                        <input type="password" id="password_login" placeholder="password">
-                    </div>
-    
-                      <button v-on:click="getUser" value="getUser">Envoyer</button>
-                  </form>
-            </div>
-        </script>
+                <nav>
+                    <script type="text/x-template" id="login">
+                        <div class="background">
+                            <div class="back">
+                                <div class="div-center">
+                                    <div class="login content">
+                                        <div id="">
+                                            <h1>Login</h1>
+                                            <hr>
+                                            <form>
+                                                <div class="form-group">
+                                                    <label for="username_login">Username :</label>
+                                                    <input type="text" class="form-control" id="username_login" placeholder="userName">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="password_login">Password :</label>
+                                                    <input type="password" class="form-control" id="password_login" placeholder="password">
+                                                </div>
+                                                <button class="btn btn-primary" v-on:click="getUser" value="getUser">Envoyer</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </script>
+                </nav>
+
 
 
 
         <!-- //SIGN UP -->
-        <script type="text/x-template" id="sign-up">
-            <div id="">
-                <h1>Conponent SIGN IN</h1>
+        <nav>
+            <div class="signup">
+                <script type="text/x-template" id="sign-up">
+                    <div class="background">
+                        <div class="back">
+                            <div class="div-center">
+                                <div id="">
+                                    <h1>Sign up</h1>
+                                    <hr>
+                                    <form>
 
-                <form>
-                    <h2 class="title">Sign in</h2>
+                                        <div class="form-group">
+                                            <label for="username">Username :</label>
+                                            <input class="form-control" type="text" id="username" placeholder="userName">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="name">name :</label>
+                                            <input class="form-control" type="text" id="name" placeholder="name">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="password">Password :</label>
+                                            <input class="form-control" type="password" id="password" placeholder="password">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="mail">mail :</label>
+                                            <input class="form-control" type="mail" id="mail" placeholder="toto@gmail.com">
+                                        </div>
+                        
+                                        <button class="btn btn-success" v-on:click="postUser" value="postUser">Envoyer</button>
+                                    </form>
 
-                    <div>
-                        <label for="username">Username :</label>
-                        <input type="text" id="username" placeholder="userName">
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div>
-                        <label for="name">name :</label>
-                        <input type="text" id="name" placeholder="name">
-                    </div>
-                    <div>
-                        <label for="password">Password :</label>
-                        <input type="password" id="password" placeholder="password">
-                    </div>
-                    <div>
-                        <label for="mail">mail :</label>
-                        <input type="mail" id="mail" placeholder="toto@gmail.com">
-                    </div>
-    
-                      <button v-on:click="postUser" value="postUser">Envoyer</button>
-                  </form>
-
+                </script>
             </div>
-        </script>
+        </nav>
 
 
 
