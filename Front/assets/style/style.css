@@ -1,36 +1,27 @@
-.back {
-  background: #bbbbbb;
-  width: 100%;
-  top: 0;
-  bottom: 0;
-}
-.background {
-  background: #bbbbbb;
+#cover {
+    background: rgb(148, 148, 148) url('https://images.unsplash.com/photo-1502680390469-be75c86b636f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2100&q=80') center center no-repeat;
+    background-size: cover;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    position: relative;
 }
 
-.div-center {
-  background: #ffffff;
-  width: 400px;
-  height: 400px;
-  position: absolute;
+#cover-caption {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    color: white;
+}
+form:before {
+  content: '';
+  height: 100%;
   left: 0;
-  right: 0;
+  position: absolute;
   top: 0;
-  bottom: 0;
-  margin: auto;
-  max-width: 100%;
-  max-height: 100%;
-  overflow: auto;
-  padding: 1em 2em;
-  border-radius: 5px;
-  border-bottom: 1px solid #ccc;
-  border-top: 1px solid #ccc;
-  border-left: 1px solid #ccc;
-  border-right: 1px solid #ccc;
-  display: table;
-}
-
-div.content {
-  display: table-cell;
-  vertical-align: middle;
+  width: 100%;
+  background-color: rgba(0,0,0,0.3);
+  z-index: -1;
+  border-radius: 10px;
 }

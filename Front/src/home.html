@@ -51,29 +51,27 @@
 
                 <nav>
                     <script type="text/x-template" id="login">
-                        <div class="background">
-                            <div class="back">
-                                <div class="div-center">
-                                    <div class="login content">
-                                        <div id="">
-                                            <h1>Login</h1>
-                                            <hr>
-                                            <form>
-                                                <div class="form-group">
-                                                    <label for="username_login">Username :</label>
-                                                    <input type="text" class="form-control" id="username_login" placeholder="userName">
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="password_login">Password :</label>
-                                                    <input type="password" class="form-control" id="password_login" placeholder="password">
-                                                </div>
-                                                <button class="btn btn-primary" v-on:click="getUser" value="getUser">Envoyer</button>
-                                            </form>
-                                        </div>
+                        <section id="cover" class="min-vh-100">
+                            <div id="cover-caption">
+                                <div class="login col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto text-center form p-4">
+                                    <div class="px-2">
+                                        <h1>Login</h1>
+                                        <hr>
+                                        <form>
+                                            <div class="form-group">
+                                                <label for="username_login">Username :</label>
+                                                <input type="text" class="form-control" id="username_login" placeholder="userName">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="password_login">Password :</label>
+                                                <input type="password" class="form-control" id="password_login" placeholder="password">
+                                            </div>
+                                            <button class="btn btn-primary" v-on:click="getUser" value="getUser">Envoyer</button>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </section>
                     </script>
                 </nav>
 
@@ -84,14 +82,14 @@
         <nav>
             <div class="signup">
                 <script type="text/x-template" id="sign-up">
-                    <div class="background">
-                        <div class="back">
-                            <div class="div-center">
+                    <section id="cover" class="min-vh-100">
+                        <div id="cover-caption">
+                            <div class="login col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto text-center form p-4">
+                                <div class="px-2">
                                 <div id="">
                                     <h1>Sign up</h1>
                                     <hr>
                                     <form>
-
                                         <div class="form-group">
                                             <label for="username">Username :</label>
                                             <input class="form-control" type="text" id="username" placeholder="userName">
@@ -108,7 +106,6 @@
                                             <label for="mail">mail :</label>
                                             <input class="form-control" type="mail" id="mail" placeholder="toto@gmail.com">
                                         </div>
-                        
                                         <button class="btn btn-success" v-on:click="postUser" value="postUser">Envoyer</button>
                                     </form>
 
@@ -116,6 +113,7 @@
                             </div>
                         </div>
                     </div>
+                </section>
                 </script>
             </div>
         </nav>
