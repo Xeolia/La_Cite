@@ -1,3 +1,21 @@
+//STORE
+const store = new Vuex.Store({
+    token: "",
+    mutations: {
+        getCookie() {
+            if($cookies.get('token')){
+                cookie = JSON.parse($cookies.get('token'));
+                console.log("store | getcookie() | valeur token | " + cookie);
+                store.token = cookie;
+                return cookie;
+            }else{
+                console.log("il n'y a pas de cookie token");
+                return null;
+            }
+        },
+    }
+})
+
 
 // HOME
 const Home = {
@@ -10,6 +28,10 @@ const Home = {
     },
     methods: {
 
+    },
+    mounted(){
+        store.commit('getCookie');
+        
     }
 };
 
