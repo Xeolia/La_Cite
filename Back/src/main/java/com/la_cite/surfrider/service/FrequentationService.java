@@ -5,6 +5,7 @@ import com.la_cite.surfrider.repository.*;
 import com.la_cite.surfrider.utils.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import java.util.List;
 
 @Service
 public class FrequentationService {
@@ -25,5 +26,9 @@ public class FrequentationService {
     public String getUsernameFromToken(String token){
         token = token.substring(7);
         return tokenUtil.extractUsername(token);
+    }
+
+    public List<Frequentation> getFrequentationByUsername(String token){
+        return frequentationRepository.findAllByCreatorEquals(token);
     }
 }
