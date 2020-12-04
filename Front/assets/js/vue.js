@@ -5,7 +5,7 @@ const Home = {
     name: 'Home',
     data:() => {
         return {
-
+            index: '124'
         }
     },
     methods: {
@@ -23,7 +23,30 @@ const Login = {
         }
     },
     methods: {
-        
+        getUser() {
+            var username = document.getElementById("username_login").value;
+            var password = document.getElementById("password_login").value;
+            console.log("username : " + username + "\npassword : " + "\n");
+
+            fetch('http://127.0.0.1:8085/user/authentification', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({username: username, password: password})
+            })
+            .then(response => {
+                response.json().then(data => {
+                    console.log(data);
+                    if(response.status == 200){
+                        $cookies.set('token', JSON.stringify(data.token));
+                        this.$router.push({ path: '/'});
+                    }else{
+                        alert("Bad password");
+                    }
+                })
+            })
+        }
     }
 };
 
@@ -37,7 +60,24 @@ const SignUp = {
         }
     },
     methods: {
-        
+        postUser: async() => {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            var mail = document.getElementById("mail").value;
+            var name = document.getElementById("name").value;
+            console.log("username : " + username + "\npassword : " + "\nname : " + name + password + "\nname : " + name + '\nmail : ' + mail);
+
+            const rawResponse = await fetch('http://127.0.0.1:8085/user/registration', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({username: username, name: name, password: password, mail: mail})
+            });
+
+            const content = await rawResponse.json();
+            console.log(content)
+        }
     }
 };
 

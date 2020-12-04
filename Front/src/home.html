@@ -36,6 +36,7 @@
         <script type="text/x-template" id="home">
             <div id="">
                 <h1>Conponent HOME</h1>
+                <h2>{{index}}</h2>
             </div>
         </script>
 
@@ -45,6 +46,20 @@
         <script type="text/x-template" id="login">
             <div id="">
                 <h1>Conponent LOGIN</h1>
+                <form>
+                    <h2 class="title">Sign up</h2>
+
+                    <div>
+                        <label for="username_login">Username :</label>
+                        <input type="text" id="username_login" placeholder="userName">
+                    </div>
+                    <div>
+                        <label for="password_login">Password :</label>
+                        <input type="password" id="password_login" placeholder="password">
+                    </div>
+    
+                      <button v-on:click="getUser" value="getUser">Envoyer</button>
+                  </form>
             </div>
         </script>
 
@@ -53,7 +68,31 @@
         <!-- //SIGN UP -->
         <script type="text/x-template" id="sign-up">
             <div id="">
-                <h1>Conponent SIGN UP</h1>
+                <h1>Conponent SIGN IN</h1>
+
+                <form>
+                    <h2 class="title">Sign in</h2>
+
+                    <div>
+                        <label for="username">Username :</label>
+                        <input type="text" id="username" placeholder="userName">
+                    </div>
+                    <div>
+                        <label for="name">name :</label>
+                        <input type="text" id="name" placeholder="name">
+                    </div>
+                    <div>
+                        <label for="password">Password :</label>
+                        <input type="password" id="password" placeholder="password">
+                    </div>
+                    <div>
+                        <label for="mail">mail :</label>
+                        <input type="mail" id="mail" placeholder="toto@gmail.com">
+                    </div>
+    
+                      <button v-on:click="postUser" value="postUser">Envoyer</button>
+                  </form>
+
             </div>
         </script>
 
@@ -70,6 +109,9 @@
 
         
     </div>
+
+
+
 </body>
 
 <!-- Imports lib -->
